@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de produtos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="form-card">
+      <header class="page-header">
+        <div class="eyebrow">CATÁLOGO / PRODUTOS</div>
+        <h1>Cadastrar produto</h1>
+        <p>Preencha as informações para adicionar um produto ao catálogo.</p>
+      </header>
+
+      <form id="product-form">
+        <div class="field">
+          <label for="nomeproduto">Nome do produto <span>*</span></label>
+          <input id="nomeproduto" name="nomeproduto" type="text" maxlength="150"
+                 placeholder="Ex.: Teclado mecânico" required>
+        </div>
+
+        <div class="field">
+          <label for="categoria">Categoria <span>*</span></label>
+          <input id="categoria" name="categoria" type="text" maxlength="100"
+                 placeholder="Ex.: Informática" required>
+        </div>
+
+        <div class="field">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" rows="4" maxlength="2000"
+                    placeholder="Descreva as características do produto..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="preco">Preço (R$) <span>*</span></label>
+          <div class="price-input">
+            <span>R$</span>
+            <input id="preco" name="preco" type="number" min="0" step="0.01"
+                   inputmode="decimal" placeholder="0.00" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="foto">URL da foto</label>
+          <input id="foto" name="foto" type="url"
+                 placeholder="https://exemplo.com/imagens/produto.jpg">
+          <p class="field-hint">Cole o endereço público da imagem. A foto não será enviada como arquivo.</p>
+          <div id="image-preview" class="image-preview" hidden>
+            <img id="preview-image" alt="Prévia da foto do produto">
+            <span id="preview-status">Prévia da imagem</span>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div class="form-actions">
+          <button class="button button-secondary" id="clear-button" type="reset">Limpar</button>
+          <button class="button button-primary" id="submit-button" type="submit">
+            <span class="button-label">Cadastrar produto</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="required-note"><span>*</span> Campos obrigatórios</p>
+      </form>
+    </section>
+    <footer>Cadastro de produtos</footer>
+  </main>
+</body>
+</html>
